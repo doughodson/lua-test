@@ -35,6 +35,7 @@ vcruntime*.dll
 lualib.a
 lua
 luac
+repl
 
 # don't ignore these
 !lua53.exe
