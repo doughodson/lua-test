@@ -13,7 +13,9 @@ project "lua-5.3.4"
       "../../lua-5.3.4/lua.c",
       "../../lua-5.3.4/luac.c"
    }
-   defines { "LUA_COMPAT_MODULE_5_2" }
-   defines { "LUA_USE_LINUX" }
+   if os.ishost("linux") then
+      defines { "LUA_COMPAT_MODULE_5_2" }
+      defines { "LUA_USE_LINUX" }
+   end
    targetname "lua"
 

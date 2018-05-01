@@ -4,7 +4,7 @@
 -- Target of interest:
 --     vs2015     (Visual Studio 2015)
 --     vs2017     (Visual Studio 2017)
---     gmake      (Linux gcc)
+--     gmake      (Linux gcc / clang)
 --
 
 -- we must have an ide/compiler specified
@@ -31,16 +31,20 @@ workspace "lua-test"
    filter { "Release" }
       optimize "On"
       -- enable compiler intrinsics and favour speed over size
---      buildoptions { "/Oi", "/Ot" }
-      defines { "WIN32", "NDEBUG" }
+      if _ACTION ~= "gmake" then
+         buildoptions { "/Oi", "/Ot" }
+         defines { "WIN32", "NDEBUG" }
+      end
 
    -- common debug configuration flags and symbols
    filter { "Debug" }
       symbols "On"
       targetsuffix "_d"
       -- enable compiler intrinsics
---      buildoptions { "/Oi" }
-      defines { "WIN32", "_DEBUG" }
+      if _ACTION ~= "gmake" then
+         buildoptions { "/Oi" }
+         defines { "WIN32", "_DEBUG" }
+      end
 
    -- libs
    dofile "libs.lua"

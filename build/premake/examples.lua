@@ -14,15 +14,16 @@ project "luac"
    }
    includedirs { "../../lua-5.3.4/src" }
    libdirs     { "../../lib" }
-   defines { "_CONSOLE" }
+   if os.ishost("linux") then
+      links { "dl", "readline" }
+   else
+      defines { "_CONSOLE" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   end
    filter "Release"
       links { "lua-5.3.4" }
-      links { "dl", "readline" }
---      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    filter "Debug"
       links { "lua-5.3.4_d" }
-      links { "dl", "readline" }
---      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
 -- stock lua interpreter / read-eval-print-loop
 project "lua"
@@ -31,19 +32,20 @@ project "lua"
    targetdir "../../examples/lua"
    debugdir "../../examples/lua"
    files {
-      "../../examples/lua/**.c",
+      "../../examples/lua/**.c"
    }
    includedirs { "../../lua-5.3.4/src" }
    libdirs     { "../../lib" }
-   defines { "_CONSOLE", }
+   if os.ishost("linux") then
+      links { "dl", "readline" }
+   else
+      defines { "_CONSOLE", }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   end
    filter "Release"
       links { "lua-5.3.4" }
-      links { "dl", "readline" }
---      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    filter "Debug"
       links { "lua-5.3.4_d" }
-      links { "dl", "readline" }
---      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
 --[[
 -- lua simple read-eval-print-loop

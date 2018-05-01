@@ -1,5 +1,6 @@
 
-Premake is a tool to generate makefiles and/or visual studio solution/project files.
+Premake is a tool to generate build files.
 
-Double click make.bat to generate files.
+# for exact compiling commands
+make verbose=1
 
