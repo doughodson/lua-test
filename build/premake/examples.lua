@@ -20,10 +20,7 @@ project "luac"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   filter "Release"
-      links { "lua-5.3.4" }
-   filter "Debug"
-      links { "lua-5.3.4_d" }
+   links { "lua-5.3.4" }
 
 -- stock lua interpreter / read-eval-print-loop
 project "lua"
@@ -42,10 +39,7 @@ project "lua"
       defines { "_CONSOLE", }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   filter "Release"
-      links { "lua-5.3.4" }
-   filter "Debug"
-      links { "lua-5.3.4_d" }
+   links { "lua-5.3.4" }
 
 --[[
 -- lua simple read-eval-print-loop
