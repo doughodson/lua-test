@@ -1,9 +1,9 @@
      
--- lua
+-- lua library
 project "lua-5.3.4"
    kind "StaticLib"
    -- destination directory for compiled binary target
-   targetdir("../../lib")
+   targetdir(LuaLibPath)
    files {
       "../../lua-5.3.4/**.h",
       "../../lua-5.3.4/**.hpp",
@@ -14,8 +14,7 @@ project "lua-5.3.4"
       "../../lua-5.3.4/luac.c"
    }
    if os.ishost("linux") then
-      defines { "LUA_COMPAT_MODULE_5_2" }
-      defines { "LUA_USE_LINUX" }
+      defines { "LUA_COMPAT_MODULE_5_2", "LUA_USE_LINUX" }
    end
    targetname "lua"
 

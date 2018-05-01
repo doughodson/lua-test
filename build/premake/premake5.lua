@@ -12,6 +12,10 @@ if (_ACTION == nil) then
   return
 end
 
+-- location of compiled libraries
+LuaIncPath       = "../../lua-5.3.4/src"
+LuaLibPath       = "../../lib"
+
 workspace "lua-test"
 
    -- destination directory for generated solution/project files

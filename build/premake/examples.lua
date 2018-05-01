@@ -12,8 +12,8 @@ project "luac"
    files {
       "../../examples/luac/**.c"
    }
-   includedirs { "../../lua-5.3.4/src" }
-   libdirs     { "../../lib" }
+   includedirs { LuaIncPath }
+   libdirs     { LuaLibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
    else
@@ -34,8 +34,8 @@ project "lua"
    files {
       "../../examples/lua/**.c"
    }
-   includedirs { "../../lua-5.3.4/src" }
-   libdirs     { "../../lib" }
+   includedirs { LuaIncPath }
+   libdirs     { LuaLibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
    else
