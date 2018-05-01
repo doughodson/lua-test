@@ -19,9 +19,7 @@ Lua
 
 * luac: stock lua compiler (i.e., luac) included with distribution
 
-* mylib-dll: stock REPL that loads a shared extension library. Note: this requires the use of repl and library to be dynamically linked to lua library dll
-
-* repl: stock REPL included with distribution
+* lua: stock lua REPL included with distribution
 
 * repl-simple: simple and dumb REPL
 
