@@ -17,15 +17,15 @@ Directories & Examples
 Lua
 ---
 
-* lua-luac: stock lua compiler (i.e., luac) included with distribution
+* luac: stock lua compiler (i.e., luac) included with distribution
 
-* lib-mylib-dll: stock REPL that loads a shared extension library. Note: this requires the use of repl and library to be dynamically linked to lua library dll
+* mylib-dll: stock REPL that loads a shared extension library. Note: this requires the use of repl and library to be dynamically linked to lua library dll
 
-* lua-repl: stock REPL included with distribution
+* repl: stock REPL included with distribution
 
-* lua-repl-simple: simple and dumb REPL
+* repl-simple: simple and dumb REPL
 
-* lua-repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
+* repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
 
-* lua-test1: example of extending Lua with a C++ class using Luna
+* test1: example of extending Lua with a C++ class using Luna
 
