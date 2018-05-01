@@ -32,6 +32,8 @@ vcruntime*.dll
 *.exe
 *.dll
 *.exp
+lua
+luac
 
 # don't ignore these
 !lua53.exe
