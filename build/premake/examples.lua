@@ -3,69 +3,49 @@
 -- Lua apps
 --------------------------------------------------------
 
--- lua compiler
-project "lua-luac"
+-- stock lua compiler
+project "luac"
    kind "ConsoleApp"
    targetname "luac"
-   targetdir "../../lua-luac"
-   debugdir "../../lua-luac"
+   targetdir "../../examples/luac"
+   debugdir "../../examples/luac"
    files {
-      "../../lua-luac/**.cpp",
-      "../../lua-luac/**.c",
-      "../../lua-luac/**.h"
+      "../../examples/luac/**.c"
    }
-   includedirs { Dep3RDPartyRoot .. "/src/lua-5.3.4" }
-   libdirs     { Dep3rdPartyLibPath }
+   includedirs { "../../lua-5.3.4/src" }
+   libdirs     { "../../lib" }
    defines { "_CONSOLE" }
-   filter "Release32"
+   filter "Release"
       links { "lua-5.3.4" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
+      links { "dl", "readline" }
+--      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug"
       links { "lua-5.3.4_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+      links { "dl", "readline" }
+--      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
--- lutok2 example
-project "lua-lutok2"
+-- stock lua interpreter / read-eval-print-loop
+project "lua"
    kind "ConsoleApp"
-   targetname "lutok2"
-   targetdir "../../lua-lutok2"
-   debugdir "../../lua-lutok2"
+   targetname "lua"
+   targetdir "../../examples/lua"
+   debugdir "../../examples/lua"
    files {
-      "../../lua-lutok2/**.cpp",
-      "../../lua-lutok2/**.c",
-      "../../lua-lutok2/**.h"
+      "../../examples/lua/**.c",
    }
-   includedirs { Dep3rdPartyIncPath, Dep3RDPartyRoot .. "/src/lua-5.1.5" }
-   libdirs     { Dep3rdPartyLibPath }
-   defines { "_CONSOLE" }
-   filter "Release32"
-      links { "lua-5.1.5" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
-      links { "lua-5.1.5_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-
--- lua stock read-eval-print-loop
-project "lua-repl"
-   kind "ConsoleApp"
-   targetname "repl"
-   targetdir "../../lua-repl"
-   debugdir "../../lua-repl"
-   files {
-      "../../lua-repl/**.c",
-      "../../lua-repl/**.h"
-   }
-   includedirs { Dep3RDPartyRoot .. "/src/lua-5.3.4" }
-   libdirs     { Dep3rdPartyLibPath }
+   includedirs { "../../lua-5.3.4/src" }
+   libdirs     { "../../lib" }
    defines { "_CONSOLE", }
-   filter "Release32"
+   filter "Release"
       links { "lua-5.3.4" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
+      links { "dl", "readline" }
+--      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug"
       links { "lua-5.3.4_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+      links { "dl", "readline" }
+--      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
-
+--[[
 -- lua simple read-eval-print-loop
 project "lua-repl-simple"
    kind "ConsoleApp"
@@ -149,3 +129,4 @@ project "lua-test1"
       links { "lua-5.3.4_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
+]]

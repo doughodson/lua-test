@@ -4,6 +4,7 @@
 -- Target of interest:
 --     vs2015     (Visual Studio 2015)
 --     vs2017     (Visual Studio 2017)
+--     gmake      (Linux gcc)
 --
 
 -- we must have an ide/compiler specified
@@ -11,31 +12,10 @@ if (_ACTION == nil) then
   return
 end
 
---
--- directory locations for 3rd party includes and libs
---
-Dep3RDPartyRoot       = "../../3rdparty"
-Dep3rdPartyIncPath    = Dep3RDPartyRoot .. "/include"
-Dep3rdPartyLibPath    = Dep3RDPartyRoot .. "/lib/" .. _ACTION .. "-32"
-
-print ("3rd Party Paths:")
-print ("  Include   :" .. Dep3rdPartyIncPath)
-print ("  Libraries :" .. Dep3rdPartyLibPath)
-
---
--- target directory path for compiled libraries (Lua and Clips)
---
-targetDirPath = Dep3rdPartyLibPath
-
-print ("Target directory path: " .. targetDirPath)
-
-workspace "ai-test"
+workspace "lua-test"
 
    -- destination directory for generated solution/project files
    location ("../" .. _ACTION)
-
-   -- create console application by default
-   kind "ConsoleApp"
 
    -- C++ code in all projects
    language "C++"
@@ -45,18 +25,18 @@ workspace "ai-test"
    --     Release        (Application linked to Multi-threaded DLL)
    --     Debug          (Application linked to Multi-threaded Debug DLL)
    --
-   configurations { "Release32", "Debug32" }
+   configurations { "Release", "Debug" }
 
    -- common release configuration flags and symbols
-   filter { "Release32" }
-      flags { "Optimize" }
+   filter { "Release" }
+      optimize "On"
       -- enable compiler intrinsics and favour speed over size
 --      buildoptions { "/Oi", "/Ot" }
       defines { "WIN32", "NDEBUG" }
 
    -- common debug configuration flags and symbols
-   filter { "Debug32" }
-      flags { "Symbols" }
+   filter { "Debug" }
+      symbols "On"
       targetsuffix "_d"
       -- enable compiler intrinsics
 --      buildoptions { "/Oi" }
@@ -66,4 +46,4 @@ workspace "ai-test"
    dofile "libs.lua"
 
    -- examples
-   dofile "examples-lua.lua"
+   dofile "examples.lua"
