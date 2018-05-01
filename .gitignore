@@ -1,0 +1,45 @@
+# vs directories
+vs2013/
+vs2015/
+gmake/
+
+# vs runtime libs
+concrt*.dll
+msvcp*.dll
+vcamp*.dll
+vccorlib*.dll
+vcomp*.dll
+vcruntime*.dll
+
+*.gch
+
+# vs compiler generated files
+*.idb
+*.ilk
+*.pdb
+
+# ignore generated library files
+*.lib
+
+#
+# eclipse files (for now)
+#
+.cproject
+.project
+.settings/
+
+# executables
+*.exe
+*.dll
+*.exp
+
+# don't ignore these
+!lua53.exe
+!premake5-alpha12.exe
+!premake5-alpha12
+
+# compiled object files
+*.[oa]
+
+# backup files
+*.bak
