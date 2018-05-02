@@ -4,7 +4,7 @@ Interfacing Lua with C/C++ Scratchpad
 Breeding ground for examples on how to interface C++ to Lua.  This include several read-evaluate-print loop (REPL) examples.
 
 Directories & Examples
--------------------
+----------------------
 
 * build: run make.cmd in build/premake directory to create build files.
 
