@@ -6,7 +6,7 @@ Breeding ground for examples on how to interface C++ to Lua.  This include sever
 Directories & Examples
 ----------------------
 
-* build: run make.cmd in build/premake directory to create build files.
+* build/premake: premake tool and scripts to create build files.
 
 * lua-5.3.4: Lua source code
 
