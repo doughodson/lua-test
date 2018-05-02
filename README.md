@@ -6,13 +6,9 @@ Breeding ground for examples on how to interface C++ to Lua.  This include sever
 Directories & Examples
 -------------------
 
-* 3rdparty: contains include files and libraries for 3rd party dependencies. The lua library is compiled.
-
 * build: run make.cmd in build/premake directory to create build files.
 
-* docs: documentation of interest
-
-* packages: contains related packages/libraries of interest.
+* lua-5.3.4: Lua source code
 
 Lua
 ---
@@ -24,4 +20,6 @@ Lua
 * repl-simple: simple and dumb REPL
 
 * repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
+
+* repl-cpp: C++ version of REPL
 
