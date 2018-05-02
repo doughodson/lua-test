@@ -8,7 +8,7 @@ extern "C" {
 #include "lualib.h"
 }
 
-#include "mylib.hpp"
+#include "mylib_bindings.hpp"
 
 int main()
 {
