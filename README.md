@@ -25,5 +25,3 @@ Lua
 
 * repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
 
-* test1: example of extending Lua with a C++ class using Luna
-
