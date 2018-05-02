@@ -82,27 +82,23 @@ project "repl-extend"
    end
    links { "lua-5.3.4" }
 
---[[
-
--- lua test to interact with C++ code
-project "lua-test1"
+-- lua simple read-eval-print-loop - but compiled with C++
+project "repl-cpp"
    kind "ConsoleApp"
    targetname "repl"
-   targetdir "../../lua-test1"
-   debugdir "../../lua-test1"
+   targetdir "../../examples/repl-cpp"
+   debugdir "../../examples/repl-cpp"
    files {
-      "../../lua-test1/**.cpp",
-      "../../lua-test1/**.c",
-      "../../lua-test1/**.h"
+      "../../examples/repl-cpp/**.cpp",
+      "../../examples/repl-cpp/**.c",
+      "../../examples/repl-cpp/**.h"
    }
-   includedirs { Dep3RDPartyRoot .. "/src/lua-5.3.4" }
-   libdirs     { Dep3rdPartyLibPath }
-   defines { "_CONSOLE", "LUA_COMPAT_MODULE" }
-   filter "Release32"
-      links { "lua-5.3.4" }
+   includedirs { LuaIncPath }
+   libdirs     { LuaLibPath }
+   if os.ishost("linux") then
+      links { "dl", "readline" }
+   else
+      defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
-      links { "lua-5.3.4_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-
-]]
+   end
+   links { "lua-5.3.4" }
