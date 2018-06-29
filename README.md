@@ -13,6 +13,8 @@ Directories & Examples
 Lua
 ---
 
+* app1: application with built-in lua-based test capability
+
 * luac: stock lua compiler (i.e., luac) included with distribution
 
 * lua: stock lua REPL included with distribution

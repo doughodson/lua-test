@@ -3,6 +3,27 @@
 -- examples
 --------------------------------------------------------
 
+-- application with 'built-in' lua-based test capability
+project "app1"
+   kind "ConsoleApp"
+   targetname "app1"
+   targetdir "../../examples/app1"
+   debugdir "../../examples/app1"
+   files {
+      "../../examples/app1/**.cpp",
+      "../../examples/app1/**.c",
+      "../../examples/app1/**.h"
+   }
+   includedirs { LuaIncPath }
+   libdirs     { LuaLibPath }
+   if os.ishost("linux") then
+      links { "dl", "readline" }
+   else
+      defines { "_CONSOLE" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   end
+   links { "lua-5.3.4" }
+
 -- stock lua compiler
 project "luac"
    kind "ConsoleApp"

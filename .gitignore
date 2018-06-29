@@ -32,10 +32,13 @@ vcruntime*.dll
 *.exe
 *.dll
 *.exp
+examples/app1/app1
+examples/lua/lua
+examples/luac/luac
+examples/repl-cpp/repl
+examples/repl-extend/repl
+examples/repl-simple/repl
 lualib.a
-lua
-luac
-repl
 
 # don't ignore these
 !lua53.exe
