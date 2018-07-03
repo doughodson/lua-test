@@ -25,3 +25,4 @@ Lua
 
 * repl-cpp: C++ version of REPL
 
+* sol2-app1: sol2-based application

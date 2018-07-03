@@ -16,6 +16,9 @@ end
 LuaIncPath       = "../../lua-5.3.4/src"
 LuaLibPath       = "../../lib"
 
+-- location of sol2
+Sol2IncPath      = "../../sol2/include"
+
 workspace "lua-test"
 
    -- destination directory for generated solution/project files
@@ -55,3 +58,6 @@ workspace "lua-test"
 
    -- examples
    dofile "examples.lua"
+   dofile "sol2-examples.lua"
+
+
