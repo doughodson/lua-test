@@ -1,7 +1,6 @@
 rem
 rem delete old solution/workspace files
 rem
-rmdir /S /Q ..\gmake
 rmdir /S /Q ..\vs2015
 rmdir /S /Q ..\vs2017
 rmdir /S /Q ..\obj

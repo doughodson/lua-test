@@ -1,14 +1,11 @@
 #
 # remove any generated build files
 #
-rm -rf ..\gmake
-rm -rf ..\vs2015
-rm -rf ..\vs2017
-rm -rf ..\obj
+rm -rf ../gmake
 #
 # remove any compiled libraries
 #
-rm -rf ..\..\lib\*.lib
+rm -rf ../../lib/*.lib
 #
 # create new build files files
 #
