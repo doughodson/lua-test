@@ -22,5 +22,8 @@ project "sol2-app1"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
+   if _ACTION == "gmake" then
+      buildoptions { "-std=c++14" }
+   end
    links { "lua-5.3.4" }
 
