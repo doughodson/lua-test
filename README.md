@@ -1,5 +1,5 @@
-Interfacing Lua with C/C++ Example Set
-======================================
+Examples of How to Interface Lua to C/C++ Code
+==============================================
 
 Breeding ground for examples on how to interface C++ to Lua.  This include several read-evaluate-print loop (REPL) examples.
 
@@ -9,6 +9,8 @@ Directories & Examples
 * build/premake: premake tool and scripts to create build files.
 
 * lua-5.3.5: Lua source code
+
+* sol2: awesome C++ oriented package to interface C++ code to Lua interpreter
 
 Lua
 ---
