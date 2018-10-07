@@ -22,7 +22,7 @@ project "app1"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }
 
 -- stock lua compiler
 project "luac"
@@ -41,7 +41,7 @@ project "luac"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }
 
 -- stock lua interpreter / read-eval-print-loop
 project "lua"
@@ -60,7 +60,7 @@ project "lua"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }
 
 -- lua simple read-eval-print-loop
 project "repl-simple"
@@ -80,7 +80,7 @@ project "repl-simple"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }
 
 -- lua stock read-eval-print-loop, extended with my own lib
 project "repl-extend"
@@ -101,7 +101,7 @@ project "repl-extend"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }
 
 -- lua simple read-eval-print-loop - but compiled with C++
 project "repl-cpp"
@@ -122,4 +122,4 @@ project "repl-cpp"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.4" }
+   links { "lua-5.3.5" }

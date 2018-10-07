@@ -1,5 +1,5 @@
-Interfacing Lua with C/C++ Scratchpad
-=====================================
+Interfacing Lua with C/C++ Example Set
+======================================
 
 Breeding ground for examples on how to interface C++ to Lua.  This include several read-evaluate-print loop (REPL) examples.
 
@@ -8,7 +8,7 @@ Directories & Examples
 
 * build/premake: premake tool and scripts to create build files.
 
-* lua-5.3.4: Lua source code
+* lua-5.3.5: Lua source code
 
 Lua
 ---

@@ -13,7 +13,7 @@ if (_ACTION == nil) then
 end
 
 -- location of compiled libraries
-LuaIncPath       = "../../lua-5.3.4/src"
+LuaIncPath       = "../../lua-5.3.5/src"
 LuaLibPath       = "../../lib"
 
 -- location of sol2
@@ -59,5 +59,4 @@ workspace "lua-test"
    -- examples
    dofile "examples.lua"
    dofile "examples-sol2.lua"
-
 
