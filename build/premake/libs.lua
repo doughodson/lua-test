@@ -19,15 +19,3 @@ project "lua-5.3.5"
    end
    targetname "lua"
 
--- myclib library (my own C library)
-project "myclib"
-   language "C"
-   kind "StaticLib"
-   -- destination directory for compiled binary target
-   targetdir(LibPath)
-   files {
-      "../examples/myclib/**.h",
-      "../examples/myclib/**.c"
-   }
-   targetname "myclib"
-

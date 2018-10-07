@@ -14,7 +14,7 @@ project "app1"
       "../../examples/app1/**.c",
       "../../examples/app1/**.h"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -33,7 +33,7 @@ project "luac"
    files {
       "../../examples/luac/**.c"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -52,7 +52,7 @@ project "lua"
    files {
       "../../examples/lua/**.c"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -72,7 +72,7 @@ project "repl-simple"
       "../../examples/repl-simple/**.c",
       "../../examples/repl-simple/**.h"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -93,7 +93,7 @@ project "repl-extend"
       "../../examples/repl-extend/**.c",
       "../../examples/repl-extend/**.h"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -114,7 +114,7 @@ project "repl-cpp"
       "../../examples/repl-cpp/**.c",
       "../../examples/repl-cpp/**.h"
    }
-   includedirs { IncPath_Lua }
+   includedirs { IncPath_lua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }

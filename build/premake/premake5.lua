@@ -12,9 +12,9 @@ if (_ACTION == nil) then
 end
 
 -- lua headers
-IncPath_Lua       = "../../lua-5.3.5/src"
+IncPath_lua       = "../../lua-5.3.5/src"
 -- sol2 headers
-IncPath_Sol2      = "../../sol2/include"
+IncPath_sol2      = "../../sol2/include"
 
 -- location of compiled libraries
 LibPath       = "../../lib"

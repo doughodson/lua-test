@@ -15,14 +15,16 @@ Lua
 
 * app1: application with built-in lua-based test capability
 
-* luac: stock lua compiler (i.e., luac) included with distribution
-
 * lua: stock lua REPL included with distribution
 
-* repl-simple: simple and dumb REPL
-
-* repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
+* luac: stock lua compiler (i.e., luac) included with distribution
 
 * repl-cpp: C++ version of REPL
 
-* sol2-app1: sol2-based application
+* repl-extend: stock lua REPL with extended C++ functions. The lua REPL is compiled with C++, not C.
+
+* repl-simple: simple and dumb REPL
+
+* sol2-app1: simple sol2-based application
+
+* sol2-app2: sol2-based application that interfaces with a C function
