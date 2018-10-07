@@ -14,8 +14,8 @@ project "sol2-app1"
       "../../examples/sol2-app1/**.c",
       "../../examples/sol2-app1/**.h"
    }
-   includedirs { LuaIncPath, Sol2IncPath }
-   libdirs     { LuaLibPath }
+   includedirs { IncPath_Lua, IncPath_Sol2 }
+   libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
    else

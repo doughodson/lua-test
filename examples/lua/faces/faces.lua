@@ -22,7 +22,7 @@
   IN THE SOFTWARE.
 ]]
 
-local tuple = require "./tuple"
+local tuple = require "tuple"
 
 -- module faces
 local faces = {}

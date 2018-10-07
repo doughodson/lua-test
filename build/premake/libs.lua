@@ -1,9 +1,10 @@
      
 -- lua library
 project "lua-5.3.5"
+   language "C"
    kind "StaticLib"
    -- destination directory for compiled binary target
-   targetdir(LuaLibPath)
+   targetdir(LibPath)
    files {
       "../../lua-5.3.5/src/**.h",
       "../../lua-5.3.5/src/**.hpp",
@@ -17,4 +18,16 @@ project "lua-5.3.5"
       defines { "LUA_COMPAT_MODULE_5_2", "LUA_USE_LINUX" }
    end
    targetname "lua"
+
+-- myclib library (my own C library)
+project "myclib"
+   language "C"
+   kind "StaticLib"
+   -- destination directory for compiled binary target
+   targetdir(LibPath)
+   files {
+      "../examples/myclib/**.h",
+      "../examples/myclib/**.c"
+   }
+   targetname "myclib"
 

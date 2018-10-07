@@ -2,7 +2,6 @@
 -- If premake command is not supplied an action (target compiler), exit!
 --
 -- Target of interest:
---     vs2015     (Visual Studio 2015)
 --     vs2017     (Visual Studio 2017)
 --     gmake      (Linux gcc / clang)
 --
@@ -12,19 +11,20 @@ if (_ACTION == nil) then
   return
 end
 
--- location of compiled libraries
-LuaIncPath       = "../../lua-5.3.5/src"
-LuaLibPath       = "../../lib"
+-- lua headers
+IncPath_Lua       = "../../lua-5.3.5/src"
+-- sol2 headers
+IncPath_Sol2      = "../../sol2/include"
 
--- location of sol2
-Sol2IncPath      = "../../sol2/include"
+-- location of compiled libraries
+LibPath       = "../../lib"
 
 workspace "lua-test"
 
    -- destination directory for generated solution/project files
    location ("../" .. _ACTION)
 
-   -- C++ code in all projects
+   -- default C++ code in projects
    language "C++"
 
    --
