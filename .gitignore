@@ -3,6 +3,9 @@ vs2015/
 vs2017/
 gmake/
 
+# vs code
+.vscode/
+
 # vs runtime libs
 concrt*.dll
 msvcp*.dll

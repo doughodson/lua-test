@@ -11,13 +11,10 @@ if (_ACTION == nil) then
   return
 end
 
--- lua headers
-IncPath_lua       = "../../lua-5.3.5/src"
--- all headers
-IncPath_all      = "../../include"
-
--- location of compiled libraries
-LibPath       = "../../lib"
+-- dependency paths
+IncPathSol2 = "../../deps/src/sol2"
+IncPathLua  = "../../deps/src/lua-5.3.5/src"
+LibPath     = "../../deps/lib"
 
 workspace "lua-test"
 

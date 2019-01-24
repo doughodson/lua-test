@@ -14,7 +14,7 @@ project "sol2-app1"
       "../../examples/sol2-app1/**.cpp",
       "../../examples/sol2-app1/**.c"
    }
-   includedirs { IncPath_lua, IncPath_all }
+   includedirs { IncPathLua, IncPathSol2 }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -25,7 +25,7 @@ project "sol2-app1"
    if _ACTION == "gmake" then
       buildoptions { "-std=c++14" }
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- using sol2 to interface to C library
 project "sol2-app2"
@@ -38,7 +38,7 @@ project "sol2-app2"
       "../../examples/sol2-app2/**.cpp",
       "../../examples/sol2-app2/**.c"
    }
-   includedirs { IncPath_lua, IncPath_all }
+   includedirs { IncPathLua, IncPathSol2 }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -46,7 +46,7 @@ project "sol2-app2"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
    if _ACTION == "gmake" then
       filter { "files:**.cpp" }
          buildoptions { "-std=c++14" }

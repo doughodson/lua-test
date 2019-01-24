@@ -14,7 +14,7 @@ project "app1"
       "../../examples/app1/**.c",
       "../../examples/app1/**.h"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -22,7 +22,7 @@ project "app1"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- stock lua compiler
 project "luac"
@@ -33,7 +33,7 @@ project "luac"
    files {
       "../../examples/luac/**.c"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -41,7 +41,7 @@ project "luac"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- stock lua interpreter / read-eval-print-loop
 project "lua"
@@ -52,7 +52,7 @@ project "lua"
    files {
       "../../examples/lua/**.c"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -60,7 +60,7 @@ project "lua"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- lua simple read-eval-print-loop
 project "repl-simple"
@@ -72,7 +72,7 @@ project "repl-simple"
       "../../examples/repl-simple/**.c",
       "../../examples/repl-simple/**.h"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -80,7 +80,7 @@ project "repl-simple"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- lua stock read-eval-print-loop, extended with my own lib
 project "repl-extend"
@@ -93,7 +93,7 @@ project "repl-extend"
       "../../examples/repl-extend/**.c",
       "../../examples/repl-extend/**.h"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -101,7 +101,7 @@ project "repl-extend"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
 
 -- lua simple read-eval-print-loop - but compiled with C++
 project "repl-cpp"
@@ -114,7 +114,7 @@ project "repl-cpp"
       "../../examples/repl-cpp/**.c",
       "../../examples/repl-cpp/**.h"
    }
-   includedirs { IncPath_lua }
+   includedirs { IncPathLua }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -122,4 +122,4 @@ project "repl-cpp"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
-   links { "lua-5.3.5" }
+   links { "liblua" }
