@@ -1,5 +1,5 @@
 
-#include <sol.hpp>
+#include <sol2/sol.hpp>
 
 extern "C" {
 #include "mysin.h"

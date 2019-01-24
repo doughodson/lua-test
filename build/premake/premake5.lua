@@ -13,8 +13,8 @@ end
 
 -- lua headers
 IncPath_lua       = "../../lua-5.3.5/src"
--- sol2 headers
-IncPath_sol2      = "../../sol2/include"
+-- all headers
+IncPath_all      = "../../include"
 
 -- location of compiled libraries
 LibPath       = "../../lib"

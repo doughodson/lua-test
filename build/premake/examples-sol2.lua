@@ -14,7 +14,7 @@ project "sol2-app1"
       "../../examples/sol2-app1/**.cpp",
       "../../examples/sol2-app1/**.c"
    }
-   includedirs { IncPath_lua, IncPath_sol2 }
+   includedirs { IncPath_lua, IncPath_all }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
@@ -38,7 +38,7 @@ project "sol2-app2"
       "../../examples/sol2-app2/**.cpp",
       "../../examples/sol2-app2/**.c"
    }
-   includedirs { IncPath_lua, IncPath_sol2 }
+   includedirs { IncPath_lua, IncPath_all }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }
