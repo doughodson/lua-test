@@ -3,30 +3,6 @@
 -- sol2-based examples
 --------------------------------------------------------
 
--- very basic sol2-based app
-project "sol2-app1"
-   kind "ConsoleApp"
-   targetname "sol2-app1"
-   targetdir "../../examples/sol2-app1"
-   debugdir "../../examples/sol2-app1"
-   files {
-      "../../examples/sol2-app1/**.h**",
-      "../../examples/sol2-app1/**.cpp",
-      "../../examples/sol2-app1/**.c"
-   }
-   includedirs { IncPathLua, IncPathSol2 }
-   libdirs     { LibPath }
-   if os.ishost("linux") then
-      links { "dl", "readline" }
-   else
-      defines { "_CONSOLE" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   end
-   if _ACTION == "gmake" then
-      buildoptions { "-std=c++14" }
-   end
-   links { "liblua" }
-
 -- using sol2 to interface to C library
 project "sol2-app2"
    kind "ConsoleApp"

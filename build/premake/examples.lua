@@ -123,3 +123,28 @@ project "repl-cpp"
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
    links { "liblua" }
+
+-- C++/Lua sol2-based interface examples
+project "sol2"
+   kind "ConsoleApp"
+   targetname "sol2"
+   targetdir "../../examples/sol2"
+   debugdir "../../examples/sol2"
+   files {
+      "../../examples/sol2/**.h**",
+      "../../examples/sol2/**.cpp",
+      "../../examples/sol2/**.c"
+   }
+   includedirs { IncPathLua, IncPathSol2 }
+   libdirs     { LibPath }
+   if os.ishost("linux") then
+      links { "dl", "readline" }
+   else
+      defines { "_CONSOLE" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   end
+   if _ACTION == "gmake" then
+      buildoptions { "-std=c++14" }
+   end
+   links { "liblua" }
+   
