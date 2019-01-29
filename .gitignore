@@ -42,7 +42,6 @@ examples/repl-cpp/repl
 examples/repl-extend/repl
 examples/repl-simple/repl
 examples/sol2/sol2
-examples/sol2-app2/sol2-app2
 lualib.a
 
 # don't ignore these

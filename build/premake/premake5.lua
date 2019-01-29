@@ -55,5 +55,4 @@ workspace "lua-test"
 
    -- examples
    dofile "examples.lua"
-   dofile "examples-sol2.lua"
 
