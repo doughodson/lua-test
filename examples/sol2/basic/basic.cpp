@@ -12,11 +12,8 @@ std::string my_function(std::string a, std::string b)
    return a + b;
 }
 
-void test1_basic()
+void basic()
 {
-   std::cout << "test1: Basic Operation\n";
-   std::cout << "----------------------\n";
-
    sol::state lua;
 
    lua["my_func"] = my_function; // way 1

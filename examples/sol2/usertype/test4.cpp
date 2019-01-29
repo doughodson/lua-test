@@ -1,3 +1,4 @@
+
 #define SOL_CHECK_ARGUMENTS 1
 #include <sol.hpp>
 #include <iostream>
@@ -19,7 +20,7 @@ struct Doge {
 	}
 };
 
-void test4()
+void usertype()
 {
 	std::cout << "=== userdata ===" << std::endl;
 

@@ -7,13 +7,13 @@
 
 #include "assert.hpp"
 
-void test2_variables()
+void variables()
 {
    sol::state lua;
-   lua.script_file("test2_variables.lua");
+   lua.script_file("variables.lua");
    // the type "sol::state" behaves 
    // exactly like a table!
    bool isfullscreen = lua["config"]["fullscreen"]; // can get nested variables
    sol::table config = lua["config"];
-   c_assert(isfullscreen);
+   //c_assert(isfullscreen);
 }
