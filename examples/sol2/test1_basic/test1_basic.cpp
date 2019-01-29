@@ -1,4 +1,7 @@
 
+//--------------------------------------------------------------
+// basic operation: open state, register function, open libraries, execute script
+//--------------------------------------------------------------
 
 #include <sol.hpp>
 #include <string>
@@ -9,9 +12,9 @@ std::string my_function(std::string a, std::string b)
    return a + b;
 }
 
-void test1()
+void test1_basic()
 {
-   std::cout << "Lua integration test 1\n";
+   std::cout << "test1: Basic Operation\n";
    std::cout << "----------------------\n";
 
    sol::state lua;
