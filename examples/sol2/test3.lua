@@ -1,3 +1,4 @@
+
 -- call single argument integer constructor
 p1 = player.new(2)
 
