@@ -14,6 +14,8 @@ std::string my_function(std::string a, std::string b)
 
 void basic()
 {
+  	std::cout << "=== basic ===" << std::endl;
+
    sol::state lua;
 
    lua["my_func"] = my_function; // way 1

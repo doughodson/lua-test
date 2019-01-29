@@ -2,12 +2,12 @@
 void basic();
 void variables();
 void usertype();
+void usertype2();   // usertype with methods
 
 void test2();
-void test3();   // usertype with methods
 
 int main()
 {
-   basic();
+   usertype2();
 }
 

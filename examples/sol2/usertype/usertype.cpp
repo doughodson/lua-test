@@ -1,21 +1,19 @@
 
+// https://sol2.readthedocs.io/en/latest/tutorial/all-the-things.html#c-classes-from-c
+
 #define SOL_CHECK_ARGUMENTS 1
 #include <sol.hpp>
 #include <iostream>
 
 #include "assert.hpp"
 
-struct Doge {
-	int tailwag = 50;
+struct Doge
+{
+   int tailwag = 50;
 
-	Doge() {
-	}
-
-	Doge(int wags)
-	: tailwag(wags) {
-	}
-
-	~Doge() {
+   Doge() {}
+   Doge(int wags) : tailwag(wags) {}
+   ~Doge() {
 		std::cout << "Dog at " << this << " is being destroyed..." << std::endl;
 	}
 };

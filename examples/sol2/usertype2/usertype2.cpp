@@ -1,13 +1,15 @@
+//
+// usertype with methods
+//
 
 #include <sol.hpp>
 #include <iostream>
 
 #include "player.hpp"
 
-void test3 ()
+void usertype2()
 {
-   std::cout << "Lua integration test 3\n";
-   std::cout << "----------------------\n";
+   std::cout << "=== usertype2 ===\n\n";
 
    sol::state lua;
 
@@ -35,8 +37,8 @@ void test3 ()
       // read and write variable
       "speed", &player::speed,
       // can only read from, not write to
-      "bullets", sol::readonly( &player::bullets )
+      "bullets", sol::readonly(&player::bullets)
    );
 
-   lua.script_file("test3.lua");
+   lua.script_file("usertype2.lua");
 }
