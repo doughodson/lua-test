@@ -12,6 +12,7 @@ void methods()
    std::cout << "=== methods ===\n\n";
 
    sol::state lua;
+   lua.open_libraries(sol::lib::base);
 
    // note that you can set a
    // userdata before you register a usertype,

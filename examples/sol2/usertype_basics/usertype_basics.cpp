@@ -44,6 +44,7 @@ void usertype_basics()
 		"bullet_count", &ship::bullets
 	);
 
+/*
 	const auto& code = R"(
 		fwoosh = ship.new()
 		-- note the ":" that is there: this is mandatory for member function calls
@@ -57,6 +58,10 @@ void usertype_basics()
 	)";
 
 	lua.script(code);
+*/
+   std::cout << "Leaving C++ land, off to Lua\n";
+
+	lua.script_file("usertype_basics.lua");
 
 	std::cout << std::endl;
 }

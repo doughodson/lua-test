@@ -8,5 +8,5 @@ void usertype_basics();
 
 int main()
 {
-   usertype_basics();
+   methods();
 }
