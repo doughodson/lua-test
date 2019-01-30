@@ -18,7 +18,7 @@ struct Doge
 	}
 };
 
-void usertype()
+void test_class()
 {
 	std::cout << "=== userdata ===" << std::endl;
 

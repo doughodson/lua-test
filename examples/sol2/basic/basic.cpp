@@ -35,5 +35,5 @@ void basic()
 
    // open libraries which makes them available to script
    lua.open_libraries(sol::lib::base, sol::lib::package);
-   lua.script_file("test1.lua");
+   lua.script_file("basic.lua");
 }

@@ -1,13 +1,12 @@
 
 void basic();
 void variables();
-void usertype();
-void usertype2();   // usertype with methods
-
-void test2();
+void set_get();
+void test_class();
+void methods();
+void usertype_basics();
 
 int main()
 {
-   usertype2();
+   usertype_basics();
 }
-

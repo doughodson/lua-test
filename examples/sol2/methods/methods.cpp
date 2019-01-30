@@ -7,9 +7,9 @@
 
 #include "player.hpp"
 
-void usertype2()
+void methods()
 {
-   std::cout << "=== usertype2 ===\n\n";
+   std::cout << "=== methods ===\n\n";
 
    sol::state lua;
 
@@ -40,5 +40,5 @@ void usertype2()
       "bullets", sol::readonly(&player::bullets)
    );
 
-   lua.script_file("usertype2.lua");
+   lua.script_file("methods.lua");
 }
