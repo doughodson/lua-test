@@ -37,6 +37,11 @@ void garbage_collection()
    std::cout << "Leaving C++ land, off to Lua\n";
 
    lua.script_file("garbage_collection.lua");
+ 
+   std::cout << "Script done, back to C++\n";
+
+   lua.collect_garbage();
+   std::cout << "Just collected garbage\n";
 
    std::cout << std::endl;
 }
