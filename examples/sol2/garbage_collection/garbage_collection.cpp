@@ -3,19 +3,8 @@
 
 #include <iostream>
 
-class A {
-public:
-   A()             { std::cout << "constructor\n"; }
-   A(int v) : x{v} { std::cout << "constructor with x\n"; }
-   ~A()            { std::cout << "destructor\n"; }
-
-   void setX(int v)   { x = v; }
-   int getX()         { return x; }
-   void printX()      { std::cout << "x: " << x << std::endl; }
-
-private:
-   int x{};
-};
+#include "A.hpp"
+#include "B.hpp"
 
 void garbage_collection()
 {
@@ -37,11 +26,17 @@ void garbage_collection()
    std::cout << "Leaving C++ land, off to Lua\n";
 
    lua.script_file("garbage_collection.lua");
- 
+
    std::cout << "Script done, back to C++\n";
 
    lua.collect_garbage();
    std::cout << "Just collected garbage\n";
 
-   std::cout << std::endl;
+	std::cout << "Creating b1 object" << std::endl;
+   B* b1 = new B;
+	std::cout << "Releasing b1 object" << std::endl;
+   b1->release();
+
+	std::cout << std::endl;
+
 }
