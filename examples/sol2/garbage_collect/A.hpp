@@ -3,9 +3,9 @@
 
 class A {
 public:
-   A()             { std::cout << "constructor\n"; }
-   A(int v) : x{v} { std::cout << "constructor with x\n"; }
-   ~A()            { std::cout << "destructor\n"; }
+   A()             { std::cout << "A constructor\n"; }
+   A(int v) : x{v} { std::cout << "A constructor with x\n"; }
+   ~A()            { std::cout << "A destructor\n"; }
 
    void setX(int v)   { x = v; }
    int getX()         { return x; }

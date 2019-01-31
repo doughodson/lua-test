@@ -16,7 +16,9 @@ a2 = nil
 
 print("Local variable")
 local a3 = A.new()
-a3 = nil
-collectgarbage("collect")
-print("Local variable reassinged")
+-- a3 = nil
+-- collectgarbage("collect")
+-- print("Local variable reassigned")
 
+print("Creating b1")
+b1 = B.new()

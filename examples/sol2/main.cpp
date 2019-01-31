@@ -6,9 +6,9 @@ void test_class();
 void methods();
 void usertype_basics();
 void garbage_collection();
+void usertype_initializers();
 
 int main()
 {
-   garbage_collection();
+   usertype_initializers();
 }
-
