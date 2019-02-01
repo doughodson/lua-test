@@ -41,12 +41,8 @@ void garbage_collect()
 	);
 
 	lua.new_usertype<B>("B", // the name of the class, as you want it to be used in lua
-      // 2 constructors
-      sol::constructors<B(), B(), B(int)>(),
+      "new", sol::no_constructor,
 		"create", sol::factories(&create),
-//		"new", sol::initializers(&initialize),
-//      "create", sol::factories(&create),
-      // destructor
       sol::meta_function::garbage_collect, sol::destructor(&destroy),
 
 		// List the member functions you wish to bind:
