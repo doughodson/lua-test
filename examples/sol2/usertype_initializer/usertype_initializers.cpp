@@ -1,18 +1,13 @@
 
 #define SOL_CHECK_ARGUMENTS 1
 #include <sol.hpp>
+#include <assert.hpp>
 
 #include <memory>
 #include <iostream>
-#include "assert.hpp"
 
-struct holy
+class holy
 {
-private:
-	holy() : data() {}
-	holy(int value) : data(value) {}
-	~holy() {}
-
 public:
 	struct deleter {
 		void operator()(holy* p) const {
@@ -40,6 +35,11 @@ public:
 		std::cout << "destroying 'holy' userdata at " << static_cast<void*>(&memory_from_lua) << std::endl;
 		memory_from_lua.~holy();
 	}
+
+private:
+   holy() : data() {}
+	holy(int value) : data(value) {}
+	~holy() {}
 };
 
 void usertype_initializers()

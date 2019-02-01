@@ -1,24 +1,35 @@
 #define SOL_CHECK_ARGUMENTS 1
 #include <sol.hpp>
+#include <assert.hpp>
 
+#include <memory>
 #include <iostream>
 
 #include "A.hpp"
 #include "B.hpp"
 
+struct deleter {
+	void operator()(B* b) const { b->release(); }
+};
+
+static std::unique_ptr<B, deleter> create() {
+	std::cout << "creating 'B' unique_ptr directly and letting sol/Lua handle it" << std::endl;
+	return std::unique_ptr<B, deleter>(new B());
+}
+
 static void destroy(B& memory_from_lua) {
-   std::cout << "releasing 'B' userdata\n";
+	std::cout << "destroying 'B' userdata at " << static_cast<void*>(&memory_from_lua) << std::endl;
    memory_from_lua.release();
 }
 
-void garbage_collection()
+void garbage_collect()
 {
-   std::cout << "=== garbage collection ===" << std::endl;
+   std::cout << "=== garbage collect ===" << std::endl;
 
 	sol::state lua;
    lua.open_libraries(sol::lib::base);
 
-	lua.new_usertype<A>( "A", // the name of the class, as you want it to be used in lua
+	lua.new_usertype<A>("A", // the name of the class, as you want it to be used in lua
         // 2 constructors
         sol::constructors<A(), A(), A(int)>(),
 
@@ -29,9 +40,12 @@ void garbage_collection()
       "printX", &A::printX
 	);
 
-	lua.new_usertype<B>( "B", // the name of the class, as you want it to be used in lua
+	lua.new_usertype<B>("B", // the name of the class, as you want it to be used in lua
       // 2 constructors
       sol::constructors<B(), B(), B(int)>(),
+		"create", sol::factories(&create),
+//		"new", sol::initializers(&initialize),
+//      "create", sol::factories(&create),
       // destructor
       sol::meta_function::garbage_collect, sol::destructor(&destroy),
 
@@ -51,10 +65,10 @@ void garbage_collection()
 //   lua.collect_garbage();
 //   std::cout << "Just collected garbage\n";
 
-	std::cout << "== Creating b2 object" << std::endl;
-   B* b2 = new B;
-   std::cout << "== Releasing b2 object" << std::endl;
-   b2->release();
+//	std::cout << "== Creating b2 object" << std::endl;
+//   B* b2 = new B;
+//   std::cout << "== Releasing b2 object" << std::endl;
+//   b2->release();
 
 	std::cout << std::endl;
 

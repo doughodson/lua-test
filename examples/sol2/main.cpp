@@ -5,10 +5,10 @@ void set_get();
 void test_class();
 void methods();
 void usertype_basics();
-void garbage_collection();
+void garbage_collect();
 void usertype_initializers();
 
 int main()
 {
-   usertype_initializers();
+   garbage_collect();
 }
