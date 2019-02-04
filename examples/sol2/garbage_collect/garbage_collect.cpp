@@ -8,19 +8,9 @@
 #include "A.hpp"
 #include "B.hpp"
 
-struct deleter {
+struct B_deleter {
 	void operator()(B* b) const { b->release(); }
 };
-
-static std::unique_ptr<B, deleter> create() {
-	std::cout << "creating 'B' unique_ptr directly and letting sol/Lua handle it" << std::endl;
-	return std::unique_ptr<B, deleter>(new B());
-}
-
-static void destroy(B& memory_from_lua) {
-	std::cout << "destroying 'B' userdata at " << static_cast<void*>(&memory_from_lua) << std::endl;
-   memory_from_lua.release();
-}
 
 void garbage_collect()
 {
@@ -41,9 +31,10 @@ void garbage_collect()
 	);
 
 	lua.new_usertype<B>("B", // the name of the class, as you want it to be used in lua
-      "new", sol::no_constructor,
-		"create", sol::factories(&create),
-//      sol::meta_function::garbage_collect, sol::destructor(&destroy),
+      "new", sol::factories(
+			[](){ return std::unique_ptr<B, B_deleter>(new B()); },
+         [](int x){ return std::unique_ptr<B, B_deleter>(new B(x)); }
+      ),
 		sol::meta_function::garbage_collect, sol::destructor([](B&){}),
 
 		// List the member functions you wish to bind:

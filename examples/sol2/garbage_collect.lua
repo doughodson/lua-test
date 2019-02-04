@@ -21,7 +21,7 @@ local a3 = A.new()
 -- print("Local variable reassigned")
 
 print("Creating b1")
-b1 = B.create()
+b1 = B.new()
 
 print("Creating b2")
-b2 = B.create()
+b2 = B.new(5)
