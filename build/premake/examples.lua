@@ -144,7 +144,7 @@ project "sol2"
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
    if _ACTION == "gmake" then
-      buildoptions { "-std=c++14" }
+      buildoptions { "-std=c++17" }
    end
    links { "liblua" }
    
