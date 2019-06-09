@@ -1,6 +1,6 @@
 # vs directories
-vs2015/
 vs2017/
+vs2019/
 gmake/
 
 # vs code
