@@ -46,8 +46,8 @@ lualib.a
 
 # don't ignore these
 !lua53.exe
-!premake5-alpha13.exe
-!premake5-alpha13
+!premake5-alpha14.exe
+!premake5-alpha14
 
 # compiled object files
 *.[oa]
