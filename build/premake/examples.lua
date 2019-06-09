@@ -145,6 +145,8 @@ project "sol2"
    end
    if _ACTION == "gmake" then
       buildoptions { "-std=c++17" }
+   else
+      buildoptions { "/std:c++17" }
    end
    links { "liblua" }
    
