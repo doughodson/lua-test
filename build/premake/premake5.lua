@@ -13,7 +13,7 @@ if (_ACTION == nil) then
 end
 
 -- dependency paths
-IncPathSol2 = "../../deps/src/sol2"
+IncPathSol = "../../deps/src/sol"
 IncPathLua  = "../../deps/src/lua-5.3.5/src"
 LibPath     = "../../deps/lib"
 

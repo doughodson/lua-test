@@ -124,18 +124,18 @@ project "repl-cpp"
    end
    links { "liblua" }
 
--- C++/Lua sol2-based interface examples
-project "sol2"
+-- C++/Lua sol-based interface examples
+project "sol"
    kind "ConsoleApp"
-   targetname "sol2"
-   targetdir "../../examples/sol2"
-   debugdir "../../examples/sol2"
+   targetname "sol"
+   targetdir "../../examples/sol"
+   debugdir "../../examples/sol"
    files {
-      "../../examples/sol2/**.h**",
-      "../../examples/sol2/**.cpp",
-      "../../examples/sol2/**.c"
+      "../../examples/sol/**.h**",
+      "../../examples/sol/**.cpp",
+      "../../examples/sol/**.c"
    }
-   includedirs { IncPathLua, IncPathSol2 }
+   includedirs { IncPathLua, IncPathSol }
    libdirs     { LibPath }
    if os.ishost("linux") then
       links { "dl", "readline" }

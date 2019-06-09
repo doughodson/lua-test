@@ -12,7 +12,7 @@ Top Level Directories
 
 * lua-5.3.5: Lua source code
 
-* sol2: awesome C++ oriented package to interface C++ code to Lua interpreter
+* sol: awesome C++ oriented package to interface C++ code to Lua interpreter
 
 Examples
 --------
@@ -29,6 +29,5 @@ Examples
 
 * repl-simple: simple and dumb REPL
 
-* sol2-app1: simple sol2-based application
+* sol: simple sol-based application
 
-* sol2-app2: sol2-based application that interfaces with a C function
