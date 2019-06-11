@@ -24,6 +24,7 @@ workspace "lua-test"
 
    -- default C++ code in projects
    language "C++"
+   cppdialect "C++17"
 
    --
    -- Build (solution) configuration options:
@@ -33,7 +34,7 @@ workspace "lua-test"
    configurations { "Release", "Debug" }
 
    -- common release configuration flags and symbols
-   filter { "Release" }
+   filter { "configurations:Release" }
       optimize "On"
       -- enable compiler intrinsics and favour speed over size
       if _ACTION ~= "gmake" then
@@ -42,7 +43,7 @@ workspace "lua-test"
       end
 
    -- common debug configuration flags and symbols
-   filter { "Debug" }
+   filter { "configurations:Debug" }
       symbols "On"
       targetsuffix "_d"
       -- enable compiler intrinsics
