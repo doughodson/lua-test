@@ -143,10 +143,5 @@ project "sol"
       defines { "_CONSOLE" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
    end
---   if _ACTION == "gmake" then
---      buildoptions { "-std=c++17" }
---   else
---      buildoptions { "/std:c++17" }
---   end
    links { "liblua" }
    
